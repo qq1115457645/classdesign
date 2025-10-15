@@ -42,4 +42,3 @@
 
 ```bash
 git clone https://github.com/qq1115457645/classdesign.git
-cd classdesign
