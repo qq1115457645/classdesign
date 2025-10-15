@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>手势识别 → 文本指令（演示）</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>基于摄像头的手势 → 文本指令（演示）</h1>
+
+  <div class="container">
+    <div class="viewer">
+      <video id="video" autoplay muted playsinline width="640" height="480"></video>
+      <canvas id="overlay" width="640" height="480"></canvas>
+    </div>
+
+    <div class="panel">
+      <div class="status">
+        <div>检测到手势： <strong id="detGesture">—</strong></div>
+        <div>映射指令： <strong id="detCommand">—</strong></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">开始摄像头</button>
+        <button id="stopBtn" class="secondary">停止</button>
+        <button id="resetMap" class="secondary">恢复默认映射</button>
+      </div>
+
+      <h4>手势 → 指令 映射（可编辑）</h4>
+      <div id="mappingList" class="mapping"></div>
+
+      <div style="margin-top:12px;">
+        <button id="exportSample">保存当前样本</button>
+        <button id="downloadSamples" class="secondary">下载样本 (samples.json)</button>
+        <div class="small">说明：保存的样本在 localStorage 可用于后续训练。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MediaPipe Hands & 绘图工具 -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+  <!-- 业务脚本 -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
